@@ -82,10 +82,11 @@ public class StreamTest {
 		
 		movies.stream().forEach(System.out::println);
 		
-		movies.stream()
+		movies.parallelStream()
 			.filter(m -> m.isClassic())
 			//.filter(Movie::isClassic)
 			.map(Movie::getName)
+			.limit(2)
 			.forEach(System.out::println);
 	}
 	
